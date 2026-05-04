@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+@import "tailwindcss";
+
+/* 1. Add the Google Font */
+
+/* 2. THEME MAPPING (This fixes the "Unknown utility" error) */
+@theme {
+  --font-inter: "Inter", sans-serif;
+  
+  /* Mapping shadcn variables to Tailwind classes */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-primary: hsl(var(--primary));
+  --color-secondary: hsl(var(--secondary));
+  --color-accent: hsl(var(--accent));
+  
+  --radius-lg: var(--radius);
+}
+
+/* 3. VARIABLE DEFINITIONS */
+@layer base {
+  :root {
+    /* Standard Shadcn/UI style variables */
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 270 90% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 270 90% 65%;
+    --radius: 0.75rem;
+
+    /* Your custom text variables */
+    --text: #6b6375;
+    --text-h: #08060d;
+  }
+
+  /* Global resets using @apply */
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    margin: 0;
+    font-family: var(--font-inter);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @apply bg-background text-foreground;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
